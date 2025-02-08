@@ -1,0 +1,18 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+// Import all of Font Awesome's CSS
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Quicksand:wght@300..700&display=swap');
+
+.start-banner {
+    width: 100%;
+    height: 25rem;
+}
+
+.tcs-navbar {
+    border-bottom: 1px solid #a77a5e;
+}
+
+h1 {
+    font-size: 5rem;
+}
