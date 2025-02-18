@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Taza de cerámica",
+    "price": 1500.00,
+    "category": "cocina",
+    "image":"img/articulos/taza.webp"
+  },
+  {
+    "id": 2,
+    "name": "Plato llano de porcelana",
+    "price": 2500.00,
+    "category": "cocina",
+    "image": "img/articulos/plato.webp"
+  },
+  {
+    "id": 3,
+    "name": "Cubiertos de acero inoxidable",
+    "price": 12000.00,
+    "category": "cocina",
+    "image": "img/articulos/cubiertos.webp"
+  },
+  {
+    "id": 4,
+    "name": "Vaso de vidrio",
+    "price": 1000.00,
+    "category": "cocina",
+    "image": "img/articulos/vaso.webp"
+  },
+  {
+    "id": 5,
+    "name": "Sartén antiadherente",
+    "price": 8000.00,
+    "category": "cocina",
+    "image": "img/articulos/sarten.webp"
+  },
+  {
+    "id": 6,
+    "name": "Olla a presión",
+    "price": 15000.00,
+    "category": "cocina",
+    "image": "img/articulos/olla-presion.webp"
+  }
+]
