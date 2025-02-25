@@ -7,3 +7,19 @@
 .nav-title{
     font-size: 1.3rem;
 }
+
+/* Footer */
+.tcs-footer{
+    color: #7f7c7c;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.tcs-logo-con-nombre-footer{
+    width: 150px;
+    height: 80px;
+}
+
+p{
+    margin: 0.5rem;
+}

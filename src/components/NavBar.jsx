@@ -27,15 +27,25 @@ export const NavBar = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="w-75 d-flex justify-content-around">
-            <Nav.Link href="#inicio" className="nav-title">Inicio</Nav.Link>
-            <NavDropdown title="Categorías" id="basic-nav-dropdown" className="nav-title">
+            <Nav.Link href="#inicio" className="nav-title">
+              Inicio
+            </Nav.Link>
+            <NavDropdown
+              title="Categorías"
+              id="basic-nav-dropdown"
+              className="nav-title"
+            >
               <NavDropdown.Item href="#dormitorio">Dormitorio</NavDropdown.Item>
               <NavDropdown.Item href="#cocina">Cocina</NavDropdown.Item>
               <NavDropdown.Item href="#bano">Baño</NavDropdown.Item>
               <NavDropdown.Item href="#aireLibre">Aire Libre</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#ofertas" className="nav-title">Ofertas</Nav.Link>
-            <Nav.Link href="#ayuda" className="nav-title">Ayuda</Nav.Link>
+            <Nav.Link href="#ofertas" className="nav-title">
+              Ofertas
+            </Nav.Link>
+            <Nav.Link href="#ayuda" className="nav-title">
+              Ayuda
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -44,7 +54,7 @@ export const NavBar = () => (
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-dark">Buscar</Button>
+            <Button variant="secondary">Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

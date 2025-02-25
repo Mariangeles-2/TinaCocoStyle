@@ -2,43 +2,141 @@
   {
     "id": 1,
     "name": "Taza de cerámica",
-    "price": 1500.00,
+    "price": 10000.00,
     "category": "cocina",
     "image":"img/articulos/taza.webp"
   },
   {
     "id": 2,
     "name": "Plato llano de porcelana",
-    "price": 2500.00,
+    "price": 25000.00,
     "category": "cocina",
     "image": "img/articulos/plato.webp"
   },
   {
     "id": 3,
     "name": "Cubiertos de acero inoxidable",
-    "price": 12000.00,
+    "price": 90000.00,
     "category": "cocina",
     "image": "img/articulos/cubiertos.webp"
   },
   {
     "id": 4,
     "name": "Vaso de vidrio",
-    "price": 1000.00,
+    "price": 12000.00,
     "category": "cocina",
     "image": "img/articulos/vaso.webp"
   },
   {
     "id": 5,
     "name": "Sartén antiadherente",
-    "price": 8000.00,
+    "price": 80000.00,
     "category": "cocina",
     "image": "img/articulos/sarten.webp"
   },
   {
     "id": 6,
     "name": "Olla a presión",
-    "price": 15000.00,
+    "price": 150000.00,
     "category": "cocina",
     "image": "img/articulos/olla-presion.webp"
+  },
+  {
+    "id": 7,
+    "name": "Tabla de cortar de madera",
+    "price": 5000.00,
+    "category": "cocina",
+    "image": "img/articulos/tabla.webp"
+  },
+  {
+    "id": 8,
+    "name": "Cuchillo de chef",
+    "price": 50000.00,
+    "category": "cocina",
+    "image": "img/articulos/cuchillo.webp"
+  },
+  {
+    "id": 9,
+    "name": "Batidora de mano",
+    "price": 180000.00,
+    "category": "cocina",
+    "image": "img/articulos/batidora.webp"
+  },
+  {
+    "id": 10,
+    "name": "Juego de recipientes de plástico",
+    "price": 40000.00,
+    "category": "cocina",
+    "image": "img/articulos/tuppers.webp"
+  },
+  {
+    "id": 11,
+    "name": "Almohada viscoelástica",
+    "price": 12000.00,
+    "category": "dormitorio",
+    "image": "img/articulos/almohada.webp"
+  },
+  {
+    "id": 12,
+    "name": "Frazada de lana",
+    "price": 25000.00,
+    "category": "dormitorio",
+    "image": "img/articulos/frazada.webp"
+  },
+  {
+    "id": 13,
+    "name": "Sábanas de algodón",
+    "price": 18000.00,
+    "category": "dormitorio",
+    "image": "img/articulos/sabanas.webp"
+  },
+  {
+    "id": 14,
+    "name": "Velador de mesa",
+    "price": 9000.00,
+    "category": "dormitorio",
+    "image": "img/articulos/lampara.webp"
+  },
+  {
+    "id": 15,
+    "name": "Perchero de pie",
+    "price": 23000.00,
+    "category": "dormitorio",
+    "image": "img/articulos/perchero.webp"
+  },
+  {
+    "id": 16,
+    "name": "Juego de toallas",
+    "price": 13000.00,
+    "category": "baño",
+    "image": "img/articulos/toallas.webp"
+  },
+  {
+    "id": 17,
+    "name": "Cortina de baño",
+    "price": 8500.00,
+    "category": "baño",
+    "image": "https://i.imgur.com/BfD6Q2N.png"
+  },
+  {
+    "id": 18,
+    "name": "Espejo de pared",
+    "price": 20000.00,
+    "category": "baño",
+    "image": "https://i.imgur.com/NfQhCjG.png"
+  },
+  {
+    "id": 19,
+    "name": "Sillón plegable para exterior",
+    "price": 3200.00,
+    "category": "aire libre",
+    "image": "https://i.imgur.com/9G0JfR1.png"
+  },
+  {
+    "id": 20,
+    "name": "Parrilla portátil",
+    "price": 50000.00,
+    "category": "aire libre",
+    "image": "https://i.imgur.com/1G4cM3J.png"
   }
 ]

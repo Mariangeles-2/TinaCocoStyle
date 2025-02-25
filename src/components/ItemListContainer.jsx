@@ -3,7 +3,8 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import Button from "react-bootstrap/Button";
 
 //Exporta componente ItemListContainer al DOM
 export const ItemListContainer = (props) => (
@@ -16,6 +17,7 @@ export const ItemListContainer = (props) => (
             <Card.Body>
               <Card.Title>{articulo.name}</Card.Title>
               <Card.Text>$ {articulo.price}</Card.Text>
+              <Button variant="secondary">Comprar</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -23,6 +25,7 @@ export const ItemListContainer = (props) => (
     </Row>
   </Container>
 );
+
 ItemListContainer.propTypes = {
   articulos: PropTypes.arrayOf(
     PropTypes.shape({
