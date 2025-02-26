@@ -116,21 +116,21 @@
     "name": "Cortina de baño",
     "price": 8500.00,
     "category": "baño",
-    "image": "https://i.imgur.com/BfD6Q2N.png"
+    "image": "img/articulos/cortina-bano.webp"
   },
   {
     "id": 18,
     "name": "Espejo de pared",
     "price": 20000.00,
     "category": "baño",
-    "image": "https://i.imgur.com/NfQhCjG.png"
+    "image": "img/articulos/espejo.webp"
   },
   {
     "id": 19,
     "name": "Sillón plegable para exterior",
     "price": 3200.00,
     "category": "aire libre",
-    "image": "https://i.imgur.com/9G0JfR1.png"
+    "image": "img/articulos/sillon-plegable.webp"
   },
   {
     "id": 20,
