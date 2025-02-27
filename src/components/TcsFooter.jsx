@@ -2,7 +2,7 @@
 import tcsLogoConNombre from "../assets/img/tcs-logo-con-nombre.png";
 
 export const TcsFooter = () => (
-  <footer className="p-1 tcs-footer">
+  <footer className="p-1 tcs-footer sticky-footer">
     <div className="d-flex flex-wap justify-content-around">
       <div className="d-flex flex-column align-items-center w-25">
         <img
