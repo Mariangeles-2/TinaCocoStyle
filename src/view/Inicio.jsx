@@ -2,6 +2,9 @@ import { ItemListContainer } from "../components/ItemListContainer";
 import { BarLoader } from "react-spinners";
 import { useEffect, useState } from "react";
 
+//Importa articulos desde JSON
+import data from "../assets/json/articulos.json";
+
 export const Inicio = () => {
   const [articulos, setArticulos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,14 +16,13 @@ export const Inicio = () => {
     );
 
     return () => clearTimeout(timer);
-  }, []);
+  });
 
   const fetchArticulos = () =>
-    fetch("json/articulos.json")
-      .then((response) => response.json())
-      .then((data) => setArticulos(data));
+    Promise.resolve(data).then((arts) => setArticulos(arts));
+
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <>
       <BarLoader
         className="position-relative my-5 top-50 start-50 translate-middle"
         color="#757575"
@@ -28,6 +30,6 @@ export const Inicio = () => {
         loading={loading}
       />
       {!loading && <ItemListContainer articulos={articulos} />}
-    </div>
+    </>
   );
 };

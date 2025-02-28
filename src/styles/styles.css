@@ -23,3 +23,22 @@
 p{
     margin: 0.5rem;
 }
+
+/* Error 404 */
+
+.tcs-error404-titulo{
+    margin-top: 2rem;
+    margin-bottom: 0%;
+    color: #4f4233;
+    font-size: 5rem;
+    text-align: center;
+}   
+.tcs-error404{
+    color: #4f4233;
+    text-align: center;
+    font-size: 10rem;
+}
+.tcs-error404-logo{
+    width: 10rem;
+    height: 10rem;
+}

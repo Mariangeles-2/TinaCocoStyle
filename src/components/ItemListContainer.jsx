@@ -13,7 +13,11 @@ export const ItemListContainer = (props) => (
       {props.articulos.map((articulo) => (
         <Col key={articulo.id}>
           <Card>
-            <Card.Img variant="top" src={articulo.image} />
+            <Card.Img
+              variant="top"
+              //Copiado en StackOverflow ya que no me redireccionaba bien las imagenes
+              src={`${import.meta.env.BASE_URL}${articulo.image}`}
+            />
             <Card.Body>
               <Card.Title>{articulo.name}</Card.Title>
               <Card.Text>$ {articulo.price}</Card.Text>

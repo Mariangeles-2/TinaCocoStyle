@@ -15,14 +15,13 @@ export const TcsFooter = () => (
           funcionalidad para cada espacio del hogar.
         </p>
       </div>
-
-      <div>
+      <div className="w-25">
         <h3>Contacto</h3>
         <p>Av. Santa Fe 742, Buenos Aires</p>
         <p>Horario de atención: Lunes a Viernes de 9 a 18 hs.</p>
         <p>Teléfono: 011-1234-5678</p>
       </div>
-      <div>
+      <div className="w-25">
         <h3>Redes Sociales</h3>
         <p>Facebook</p>
         <p>Instagram</p>

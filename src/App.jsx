@@ -22,14 +22,16 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/products/:id" element={<DetalleDeProducto />} />
-          <Route path="/categoria/:categoriaId" element={<Inicio />} />
-          <Route path="/ofertas" element={<Ofertas />} />
-          <Route path="/ayuda" element={<Ayuda />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
+        <div className="d-flex flex-column min-vh-100">
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/products/:id" element={<DetalleDeProducto />} />
+            <Route path="/categorias/:categoriaId" element={<Inicio />} />
+            <Route path="/ofertas" element={<Ofertas />} />
+            <Route path="/ayuda" element={<Ayuda />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </div>
       </BrowserRouter>
       <TcsFooter />
     </>
