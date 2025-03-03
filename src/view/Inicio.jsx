@@ -1,34 +1,31 @@
-import { ItemListContainer } from "../components/ItemListContainer";
-import { BarLoader } from "react-spinners";
+//Importa librería de react
 import { useEffect, useState } from "react";
-
-//Importa articulos desde JSON
-import data from "../assets/json/articulos.json";
+import { useParams } from "react-router-dom";
+//Importa componentes
+import { ItemListContainer } from "../components/ItemListContainer";
+import { LoadingSpinner } from "../components/LoadingSpinner";
+import { fetchArticulos } from "../utils/cargarArticulos";
 
 export const Inicio = () => {
   const [articulos, setArticulos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { categoriaId } = useParams();
 
   useEffect(() => {
-    const timer = setTimeout(
-      () => fetchArticulos().finally(() => setLoading(false)),
-      3000
-    );
+    setLoading(true); // Restablece el estado de carga a true cada vez que cambia la categoría
+
+    const timer = setTimeout(() => {
+      fetchArticulos(categoriaId)
+        .then((arts) => setArticulos(arts))
+        .finally(() => setLoading(false));
+    }, 3000);
 
     return () => clearTimeout(timer);
-  });
-
-  const fetchArticulos = () =>
-    Promise.resolve(data).then((arts) => setArticulos(arts));
+  }, [categoriaId]);
 
   return (
     <>
-      <BarLoader
-        className="position-relative my-5 top-50 start-50 translate-middle"
-        color="#757575"
-        width={200}
-        loading={loading}
-      />
+      <LoadingSpinner loading={loading} />
       {!loading && <ItemListContainer articulos={articulos} />}
     </>
   );

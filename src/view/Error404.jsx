@@ -1,10 +1,8 @@
 //Importa librería de react-bootstrap
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-
 //Importa imagen de error 404
 import tcsError404Logo from "../assets/img/tcs-error404-logo.png";
-
 //Importa link
 import { Link } from "react-router-dom";
 

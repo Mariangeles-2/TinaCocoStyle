@@ -50,13 +50,11 @@ export const NavBar = () => (
                 Aire Libre
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={NavLink} to="/ofertas" className="nav-title">
-              Ofertas
-            </Nav.Link>
             <Nav.Link as={NavLink} to="/ayuda" className="nav-title">
               Ayuda
             </Nav.Link>
           </Nav>
+          {/* Agrega formulario de búsqueda */}
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -64,7 +62,9 @@ export const NavBar = () => (
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="secondary">Buscar</Button>
+            <Button variant="secondary" type="submit">
+              Buscar
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

@@ -42,3 +42,24 @@ p{
     width: 10rem;
     height: 10rem;
 }
+
+/* Detalle del producto */
+.tcs-nombre-producto{
+    font-size: 1.8rem;
+    color: #4f4233;
+}
+.tcs-detalle-producto{
+font-size: 1.2rem;
+}
+.tcs-precio{
+    font-size: 1.5rem;
+    color: #4f4233;
+}
+.tcs-promo-cuotas{
+    font-size: 1rem;
+    color: #3b6336;
+}
+.tcs-imagen-tarjetas-bancarias{
+    width: 7rem;
+    height: 1rem;   
+}

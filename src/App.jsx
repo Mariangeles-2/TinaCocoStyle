@@ -13,7 +13,6 @@ import { TcsFooter } from "./components/TcsFooter";
 //Importa componentes de las páginas
 import { Inicio } from "./view/Inicio.jsx";
 import { DetalleDeProducto } from "./view/DetalleDeProducto.jsx";
-import { Ofertas } from "./view/Ofertas.jsx";
 import { Ayuda } from "./view/Ayuda.jsx";
 import { Error404 } from "./view/Error404.jsx";
 
@@ -27,7 +26,6 @@ function App() {
             <Route path="/" element={<Inicio />} />
             <Route path="/products/:id" element={<DetalleDeProducto />} />
             <Route path="/categorias/:categoriaId" element={<Inicio />} />
-            <Route path="/ofertas" element={<Ofertas />} />
             <Route path="/ayuda" element={<Ayuda />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
