@@ -7,10 +7,13 @@ import { useContext } from "react";
 //Importa librería de react-bootstrap
 import { Button } from "react-bootstrap";
 //Importa contexto
-import { ShowCardSidebarContext } from "../contexts/ShowCardSidebarContext";
+import { CartSidebarContext } from "../contexts/CartSidebarContext";
+import { CartContext } from "../contexts/CartContext";
 
 export const CartWidget = () => {
-  const { setShowCartSidebar } = useContext(ShowCardSidebarContext);
+  const { setShowCartSidebar } = useContext(CartSidebarContext);
+  const { getTotalItems } = useContext(CartContext);
+
   const handleShow = () => setShowCartSidebar(true);
   return (
     <div className="d-flex justify-content-end me-5">
@@ -20,7 +23,7 @@ export const CartWidget = () => {
         onClick={handleShow}
       >
         <FontAwesomeIcon icon={faCartShopping} className="me-2" />
-        <span>0</span>
+        <span>{getTotalItems()}</span>
       </Button>
     </div>
   );
