@@ -7,12 +7,10 @@ import { useContext } from "react";
 //Importa librería de react-bootstrap
 import { Button } from "react-bootstrap";
 //Importa contexto
-import { CartSidebarContext } from "../contexts/CartSidebarContext";
 import { CartContext } from "../contexts/CartContext";
 
 export const CartWidget = () => {
-  const { setShowCartSidebar } = useContext(CartSidebarContext);
-  const { getTotalItems } = useContext(CartContext);
+  const { setShowCartSidebar, getTotalItems } = useContext(CartContext);
 
   const handleShow = () => setShowCartSidebar(true);
   return (

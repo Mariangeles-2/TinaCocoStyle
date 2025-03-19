@@ -63,3 +63,9 @@ font-size: 1.2rem;
     width: 7rem;
     height: 1rem;   
 }
+
+/* Carrito */
+.tcs-img-item{
+    width: 5rem;
+    height: 5rem;
+}

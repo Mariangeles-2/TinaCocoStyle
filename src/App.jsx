@@ -17,29 +17,28 @@ import { Inicio } from "./view/Inicio.jsx";
 import { DetalleDeProducto } from "./view/DetalleDeProducto.jsx";
 import { Ayuda } from "./view/Ayuda.jsx";
 import { Error404 } from "./view/Error404.jsx";
-import { CartSidebarContextProvider } from "./contexts/providers/CartSidebarContextProvider.jsx";
 import { CartContextProvider } from "./contexts/providers/CartContextProvider.jsx";
+import { CartView } from "./view/CartView.jsx";
 
 function App() {
   return (
     <>
-      <CartSidebarContextProvider>
-        <CartContextProvider>
-          <BrowserRouter>
-            <NavBar />
-            <div className="d-flex flex-column min-vh-100">
-              <Routes>
-                <Route path="/" element={<Inicio />} />
-                <Route path="/products/:id" element={<DetalleDeProducto />} />
-                <Route path="/categorias/:categoriaId" element={<Inicio />} />
-                <Route path="/ayuda" element={<Ayuda />} />
-                <Route path="*" element={<Error404 />} />
-              </Routes>
-            </div>
-          </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar />
+          <div className="d-flex flex-column min-vh-100">
+            <Routes>
+              <Route path="/" element={<Inicio />} />
+              <Route path="/products/:id" element={<DetalleDeProducto />} />
+              <Route path="/categorias/:categoriaId" element={<Inicio />} />
+              <Route path="/ayuda" element={<Ayuda />} />
+              <Route path="/carrito" element={<CartView />} />
+              <Route path="*" element={<Error404 />} />
+            </Routes>
+          </div>
           <CartSidebar />
-        </CartContextProvider>
-      </CartSidebarContextProvider>
+        </BrowserRouter>
+      </CartContextProvider>
       <TcsFooter />
     </>
   );

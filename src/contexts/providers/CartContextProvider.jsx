@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
+  const [showCartSidebar, setShowCartSidebar] = useState(false);
 
   const addToCart = useCallback(
     (article, quantity) => {
@@ -40,12 +41,22 @@ export const CartContextProvider = ({ children }) => {
   const value = useMemo(
     () => ({
       cartList,
+      showCartSidebar,
+      setShowCartSidebar,
       addToCart,
       removeList,
       deleteItem,
       getTotalItems,
     }),
-    [cartList, addToCart, removeList, deleteItem, getTotalItems]
+    [
+      cartList,
+      showCartSidebar,
+      setShowCartSidebar,
+      addToCart,
+      removeList,
+      deleteItem,
+      getTotalItems,
+    ]
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
