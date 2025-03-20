@@ -65,7 +65,24 @@ font-size: 1.2rem;
 }
 
 /* Carrito */
+
+.tcs-titulo-mi-carrito{
+    font-size: 2rem;
+    color: #4f4233;
+}
+
 .tcs-img-item{
     width: 5rem;
     height: 5rem;
+    object-fit: cover
+}
+
+.tcs-titulo-resumen{
+    font-size: 1.5rem;
+    color: #4d4236;
+}
+
+.tcs-titulo-total{
+    font-size: 1.2rem;
+    color: #4d4236;
 }
