@@ -23,7 +23,7 @@ export const CartView = () => {
           <div className="w-75">
             <CartItemList />
           </div>
-          <div className="d-flex flex-column p-2 ms-3 border rounded">
+          <div className="d-flex flex-column p-2 ms-3 border rounded h-25">
             <h2 className="tcs-titulo-resumen">Resumen de compra</h2>
             <div className="d-flex mt-1 justify-content-between">
               <p>Productos</p>

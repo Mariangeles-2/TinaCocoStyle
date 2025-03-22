@@ -5,9 +5,13 @@ import { formatearPrecio } from "../utils/formatearPrecios";
 import { CartContext } from "../contexts/CartContext";
 //Importa librería de react
 import { useContext } from "react";
+//Importa componente
+import { QuantityControl } from "../components/QuantityControl";
+import { RemoveButton } from "./RemoveButton";
 
 export const CartItemList = () => {
-  const { cartList } = useContext(CartContext);
+  const { cartList, updateQuantity, removeFromCart } = useContext(CartContext);
+
   return (
     <div className="d-flex flex-column me-1">
       {cartList.map((item) => (
@@ -20,13 +24,23 @@ export const CartItemList = () => {
             src={obtenerURLImagen(item.image)}
             alt={item.name}
           />
-          <div className="flex-grow-1 ms-2">
-            <div>{item.name}</div>
-            <div className="text-muted">
-              {formatearPrecio(item.price)} x {item.quantity}
+          <div className="w-75">
+            <div className="flex-grow-1 ms-2">
+              <div>{item.name}</div>
+              <div className="text-muted">
+                {formatearPrecio(item.price)} x {item.quantity}
+              </div>
             </div>
           </div>
-          
+          <div className="d-flex align-items-center ">
+            <QuantityControl
+              quantity={item.quantity}
+              onIncrease={() => updateQuantity(item.id, item.quantity + 1)}
+              onDecrease={() => updateQuantity(item.id, item.quantity - 1)}
+              onChange={(newQuantity) => updateQuantity(item.id, newQuantity)}
+            />
+            <RemoveButton onRemove={() => removeFromCart(item.id)} />
+          </div>
         </div>
       ))}
     </div>

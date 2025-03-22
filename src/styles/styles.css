@@ -86,3 +86,10 @@ font-size: 1.2rem;
     font-size: 1.2rem;
     color: #4d4236;
 }
+
+/*Items */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
