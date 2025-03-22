@@ -6,6 +6,13 @@ import { ItemListContainer } from "../components/ItemListContainer";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { fetchArticulos } from "../utils/cargarArticulos";
 
+const categories = {
+  dormitorio: "Dormitorio",
+  cocina: "Cocina",
+  bano: "Baño",
+  "aire-libre": "Aire Libre",
+};
+
 export const Inicio = () => {
   const [articulos, setArticulos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +33,16 @@ export const Inicio = () => {
   return (
     <>
       <LoadingSpinner loading={loading} />
-      {!loading && <ItemListContainer articulos={articulos} />}
+      {!loading && (
+        <>
+          {categoriaId && (
+            <h2 className="tcs-titulo-categoria">
+              {categories[categoriaId] || "Categoría"}
+            </h2>
+          )}
+          <ItemListContainer articulos={articulos} />
+        </>
+      )}
     </>
   );
 };

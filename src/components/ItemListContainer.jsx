@@ -6,8 +6,8 @@ import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-//Importa formatearPrecio
-import { formatearPrecio } from "../utils/formatearPrecios";
+//Importa formatPrice
+import { formatPrice } from "../utils/formatPrice";
 //Importa URL para imagenes
 import { obtenerURLImagen } from "../utils/obtenerURLImagen";
 //Importa contexto de CartContext
@@ -36,7 +36,7 @@ export const ItemListContainer = (props) => {
                 />
                 <Card.Body>
                   <Card.Title>{articulo.name}</Card.Title>
-                  <Card.Text>{formatearPrecio(articulo.price)}</Card.Text>
+                  <Card.Text>{formatPrice(articulo.price)}</Card.Text>
                   <Button
                     variant="secondary"
                     onClick={(e) => {

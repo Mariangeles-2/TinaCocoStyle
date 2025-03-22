@@ -43,12 +43,12 @@ p{
     height: 10rem;
 }
 
-/* Detalle del producto */
-.tcs-nombre-producto{
+/* Detalle del articulo */
+.tcs-nombre-articulo{
     font-size: 1.8rem;
     color: #4f4233;
 }
-.tcs-detalle-producto{
+.tcs-detalle-articulo{
 font-size: 1.2rem;
 }
 .tcs-precio{

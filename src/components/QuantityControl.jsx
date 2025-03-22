@@ -2,13 +2,23 @@
 import { Button } from "react-bootstrap";
 //Importa PropTypes
 import PropTypes from "prop-types";
+//Importa useContext
+import { useContext } from "react";
+//Importa contexto de CartContext
+import { CartContext } from "../contexts/CartContext";
 
-export const QuantityControl = ({
-  quantity,
-  onIncrease,
-  onDecrease,
-  onChange,
-}) => {
+export const QuantityControl = ({ item }) => {
+  const { updateQuantity } = useContext(CartContext);
+  const onIncrease = () => {
+    updateQuantity(item.id, item.quantity + 1);
+  };
+  const onDecrease = () => {
+    updateQuantity(item.id, item.quantity - 1);
+  };
+  const onChange = (newQuantity) => {
+    updateQuantity(item.id, newQuantity);
+  };
+
   return (
     <div className="d-flex align-items-center">
       <Button className="btn btn-secondary btn-sm m-1" onClick={onDecrease}>
@@ -17,7 +27,7 @@ export const QuantityControl = ({
       <input
         type="number"
         className="form-control mx-s quantity-input"
-        value={quantity}
+        value={item.quantity}
         onChange={(e) => onChange(Number(e.target.value))}
         min="1"
       />
@@ -29,8 +39,5 @@ export const QuantityControl = ({
 };
 
 QuantityControl.propTypes = {
-  quantity: PropTypes.number.isRequired,
-  onIncrease: PropTypes.func.isRequired,
-  onDecrease: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired,
 };

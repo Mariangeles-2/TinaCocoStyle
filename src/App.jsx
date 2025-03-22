@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TcsFooter } from "./components/TcsFooter";
 //Importa componentes de las páginas
 import { Inicio } from "./view/Inicio.jsx";
-import { DetalleDeProducto } from "./view/DetalleDeProducto.jsx";
+import { DetalleDeArticulo } from "./view/DetalleDeArticulo.jsx";
 import { Ayuda } from "./view/Ayuda.jsx";
 import { Error404 } from "./view/Error404.jsx";
 import { CartContextProvider } from "./contexts/providers/CartContextProvider.jsx";
@@ -29,7 +29,7 @@ function App() {
           <div className="d-flex flex-column min-vh-100">
             <Routes>
               <Route path="/" element={<Inicio />} />
-              <Route path="/products/:id" element={<DetalleDeProducto />} />
+              <Route path="/products/:id" element={<DetalleDeArticulo />} />
               <Route path="/categorias/:categoriaId" element={<Inicio />} />
               <Route path="/ayuda" element={<Ayuda />} />
               <Route path="/carrito" element={<CartView />} />

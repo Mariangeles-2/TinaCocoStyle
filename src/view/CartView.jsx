@@ -4,7 +4,7 @@ import { useContext } from "react";
 //Importa componente de react-bootstrap
 import Button from "react-bootstrap/Button";
 //Importa formatear precio
-import { formatearPrecio } from "../utils/formatearPrecios";
+import { formatPrice } from "../utils/formatPrice";
 //Importa componente
 import { CartItemList } from "../components/CartItemList";
 //Importa Link de react-router-dom
@@ -17,7 +17,7 @@ export const CartView = () => {
       <h1 className="tcs-titulo-mi-carrito mb-4">Mi carrito</h1>
 
       {cartList.length === 0 ? (
-        <p className="text-muted mt-5">No hay productos en el carrito</p>
+        <p className="text-muted mt-5">No hay articulos en el carrito</p>
       ) : (
         <div className="d-flex">
           <div className="w-75">
@@ -26,7 +26,7 @@ export const CartView = () => {
           <div className="d-flex flex-column p-2 ms-3 border rounded h-25">
             <h2 className="tcs-titulo-resumen">Resumen de compra</h2>
             <div className="d-flex mt-1 justify-content-between">
-              <p>Productos</p>
+              <p>Articulos</p>
               <div className="mt-2">
                 {cartList.reduce((acc, item) => acc + item.quantity, 0)}{" "}
               </div>
@@ -38,7 +38,7 @@ export const CartView = () => {
             <div className="d-flex mt-1 justify-content-between">
               <h3 className="tcs-titulo-total m-2">Total</h3>
               <div className="my-2">
-                {formatearPrecio(
+                {formatPrice(
                   cartList.reduce(
                     (acc, item) => acc + item.price * item.quantity,
                     0

@@ -24,9 +24,9 @@ export const CartSidebar = () => {
       </Offcanvas.Header>
       <Offcanvas.Body className="d-flex flex-column justify-content-between">
         {cartList.length === 0 ? (
-          <p className="text-muted mt-5">No hay productos en el carrito</p>
+          <p className="text-muted mt-5">No hay articulos en el carrito</p>
         ) : (
-            <CartItemList />
+          <CartItemList />
         )}
         <Button
           variant="secondary"

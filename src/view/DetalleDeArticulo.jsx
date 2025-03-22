@@ -1,5 +1,5 @@
-//Importa useState y useEffect de react
-import { useState, useEffect } from "react";
+//Importa useState, useEffect y useContext de react
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 // Importa la imagen directamente
 import imagenTarjetasBancarias from "../assets/img/tcs-tarjetas-bancarias.webp";
@@ -7,22 +7,23 @@ import imagenTarjetasBancarias from "../assets/img/tcs-tarjetas-bancarias.webp";
 import data from "../assets/json/articulos.json";
 //Importa Button de react-bootstrap
 import Button from "react-bootstrap/Button";
-//Importa formatearPrecio
-import { formatearPrecio } from "../utils/formatearPrecios";
+//Importa formatPrice
+import { formatPrice } from "../utils/formatPrice";
 //Importa URL para imagenes
 import { obtenerURLImagen } from "../utils/obtenerURLImagen";
+//Importa contexto
+import { CartContext } from "../contexts/CartContext";
 
-export const DetalleDeProducto = () => {
-  const [producto, setProducto] = useState(null);
+export const DetalleDeArticulo = () => {
+  const { addToCart } = useContext(CartContext);
+  const [articulo, setArticulo] = useState(null);
   const { id } = useParams();
 
-  console.log({ id });
-
   useEffect(() => {
-    setProducto(data.find((producto) => producto.id === Number(id)));
+    setArticulo(data.find((articulo) => articulo.id === Number(id)));
   }, [id]);
 
-  if (!producto) return null;
+  if (!articulo) return null;
 
   return (
     <main>
@@ -30,13 +31,13 @@ export const DetalleDeProducto = () => {
         <img
           className="me-5"
           width={500}
-          src={obtenerURLImagen(producto.image)}
-          alt={producto.name}
+          src={obtenerURLImagen(articulo.image)}
+          alt={articulo.name}
         />
         <div className="d-flex flex-column align-items-center">
-          <h1 className="mt-5 tcs-nombre-producto">{producto.name}</h1>
-          <p className="tcs-detalle-producto mt-3">{producto.detail}</p>
-          <p className="tcs-precio">{formatearPrecio(producto.price)}</p>
+          <h1 className="mt-5 tcs-nombre-articulo">{articulo.name}</h1>
+          <p className="tcs-detalle-articulo mt-3">{articulo.detail}</p>
+          <p className="tcs-precio">{formatPrice(articulo.price)}</p>
           <p>
             <b>10% EXTRA</b> pagando con{" "}
             <b>tarjeta de débito o transferencia</b> (mínimo de compra $80.000)
@@ -47,7 +48,15 @@ export const DetalleDeProducto = () => {
             src={imagenTarjetasBancarias}
             alt="Tarjetas Bancarias"
           />
-          <Button variant="secondary" className="mt-5 ">
+          <Button
+            variant="secondary"
+            className="mt-5"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addToCart(articulo, 1);
+            }}
+          >
             Agregar al carrito
           </Button>
         </div>

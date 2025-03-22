@@ -34,6 +34,21 @@ export const CartContextProvider = ({ children }) => {
     [cartList]
   );
 
+  const updateQuantity = useCallback(
+    (id, quantity) => {
+      if (cartList.some((item) => item.id === id)) {
+        if (quantity <= 0) {
+          deleteItem(id);
+        } else {
+          const item = cartList.find((item) => item.id === id);
+          item.quantity = quantity;
+          setCartList([...cartList]);
+        }
+      }
+    },
+    [cartList, deleteItem]
+  );
+
   const getTotalItems = useCallback(() => {
     return cartList.reduce((acc, item) => acc + item.quantity, 0);
   }, [cartList]);
@@ -44,6 +59,7 @@ export const CartContextProvider = ({ children }) => {
       showCartSidebar,
       setShowCartSidebar,
       addToCart,
+      updateQuantity,
       removeList,
       deleteItem,
       getTotalItems,
@@ -53,6 +69,7 @@ export const CartContextProvider = ({ children }) => {
       showCartSidebar,
       setShowCartSidebar,
       addToCart,
+      updateQuantity,
       removeList,
       deleteItem,
       getTotalItems,

@@ -4,9 +4,18 @@ import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 //Importa FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";  
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+//Importa useContext
+import { useContext } from "react";
+//Importa contexto de CartContext
+import { CartContext } from "../contexts/CartContext";  
 
-export const RemoveButton = ({ onRemove }) => {
+export const RemoveButton = ({ itemId }) => {
+    const { deleteItem } = useContext(CartContext);
+    const onRemove = () => {
+      deleteItem(itemId);
+    };
+    
   return (
     <Button className="btn btn-secondary btn-sm" onClick={onRemove}>
       <FontAwesomeIcon icon={faTrash} />
@@ -15,5 +24,5 @@ export const RemoveButton = ({ onRemove }) => {
 };
 
 RemoveButton.propTypes = {
-  onRemove: PropTypes.func.isRequired,
+    itemId: PropTypes.number.isRequired,
 };
