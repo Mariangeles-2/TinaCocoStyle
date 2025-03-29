@@ -1,11 +1,24 @@
 //Importa librería de react
-import { useState } from "react";
+import { useState, useContext } from "react";
 //Importa librería de react-bootstrap
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
+//Importa contexto de CartContext
+import { CartContext } from "../contexts/CartContext";
+//Importa Firestore
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../config/firebaseConfig";
+//Importa SweetAlert
+import Swal from "sweetalert2";
+//Importa useNavigate de react-router-dom
+import { useNavigate } from "react-router-dom";
 
 export const ShippingDataForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
+  const { cartList, getTotalPrice, removeList } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const [buyer, setBuyer] = useState({
+    firstname: "",
+    lastname: "",
     email: "",
     phone: "",
     address: "",
@@ -13,17 +26,54 @@ export const ShippingDataForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setBuyer({ ...buyer, [name]: value });
+  };
+
+  const createOrder = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const order = {
+      buyer,
+      items: cartList.map((item) => {
+        const orderItem = { ...item };
+        delete orderItem.stock;
+        return orderItem;
+      }),
+      total: getTotalPrice(),
+      date: new Date().toISOString(),
+    };
+    try {
+      const docRef = await addDoc(collection(db, "ordenes"), order);
+      Swal.fire({
+        title: "Orden creada con éxito",
+        text: `Tu número de orden es el: ${docRef.id}`,
+        icon: "success",
+        showConfirmButton: false,
+        timer: 2500,
+      }).then(() => {
+        removeList();
+        navigate("/");
+      });
+    } catch (error) {
+      console.error("Error creando orden: ", error);
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un error al crear la orden. Por favor, inténtalo de nuevo.",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 2500,
+      });
+    }
   };
 
   return (
-    <Form>
+    <Form onSubmit={createOrder}>
       <Form.Group className="mb-3">
         <Form.Control
           type="text"
           name="lastname"
           placeholder="Apellido"
-          value={formData.name}
+          value={buyer.name}
           onChange={handleChange}
           required
         />
@@ -34,7 +84,7 @@ export const ShippingDataForm = () => {
           type="text"
           name="firstname"
           placeholder="Nombre"
-          value={formData.name}
+          value={buyer.name}
           onChange={handleChange}
           required
         />
@@ -45,7 +95,7 @@ export const ShippingDataForm = () => {
           type="email"
           name="email"
           placeholder="Correo Electrónico"
-          value={formData.email}
+          value={buyer.email}
           onChange={handleChange}
           required
         />
@@ -56,7 +106,7 @@ export const ShippingDataForm = () => {
           type="tel"
           name="phone"
           placeholder="Teléfono"
-          value={formData.phone}
+          value={buyer.phone}
           onChange={handleChange}
           required
         />
@@ -67,11 +117,14 @@ export const ShippingDataForm = () => {
           type="text"
           name="address"
           placeholder="Calle, número, piso, departamento"
-          value={formData.address}
+          value={buyer.address}
           onChange={handleChange}
           required
         />
       </Form.Group>
+      <Button className="btn btn-secondary ms-2 btn-sm" type="submit">
+        Finalizar compra
+      </Button>
     </Form>
   );
 };

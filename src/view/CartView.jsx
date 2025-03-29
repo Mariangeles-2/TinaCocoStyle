@@ -34,9 +34,6 @@ export const CartView = () => {
             <div className="d-flex flex-column p-2 ms-3 border rounded mb-3">
               <h2 className="tcs-resum-title">Datos de envío</h2>{" "}
               <ShippingDataForm />
-              <Button className="btn btn-secondary ms-2 btn-sm">
-                Finalizar compra
-              </Button>
             </div>
           </div>
         </div>

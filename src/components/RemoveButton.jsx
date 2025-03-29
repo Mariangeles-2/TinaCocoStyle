@@ -18,7 +18,7 @@ export const RemoveButton = ({ itemId }) => {
 
   return (
     <Button className="btn btn-secondary btn-sm" onClick={onRemove}>
-      <FontAwesomeIcon icon={faTrash} />
+      <FontAwesomeIcon icon={faTrash}/>
     </Button>
   );
 };

@@ -23,9 +23,9 @@ export const TcsFooter = () => (
       </div>
       <div className="w-25">
         <h3>Redes Sociales</h3>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>Twitter</p>
+        <p>Facebook TinaCoco Style</p>
+        <p>Instagram @TinaCocoStyle.ok</p>
+        <p>Twitter #TinaCocoStyle</p>
       </div>
     </div>
     <p>&copy; 2021 - All rights reserved</p>

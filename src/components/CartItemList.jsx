@@ -1,7 +1,6 @@
 //Importa utilidades
 import { getImageURL } from "../utils/getImageURL";
 import { formatPrice } from "../utils/formatPrice";
-//Importa contexto
 import { CartContext } from "../contexts/CartContext";
 //Importa librería de react
 import { useContext } from "react";

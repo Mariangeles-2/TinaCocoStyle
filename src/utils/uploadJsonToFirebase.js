@@ -1,5 +1,7 @@
+//Importa librería de firebase
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
+//Importa archivo JSON
 import data from "../assets/json/articles.json";
 
 export const uploadJsonToFirebase = async () => {

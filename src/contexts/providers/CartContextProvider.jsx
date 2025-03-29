@@ -6,12 +6,13 @@ import { useState, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 //Importa librería de sweetalert2
 import Swal from "sweetalert2";
+//Importa función formatPrice
+import { formatPrice } from "../../utils/formatPrice";
 
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const [showCartSidebar, setShowCartSidebar] = useState(false);
 
-  // Función modularizada para validar stock y actualizar el carrito
   const validateAndUpdateStock = useCallback(
     (item, newQuantity) => {
       if (newQuantity <= item.stock) {
@@ -71,6 +72,16 @@ export const CartContextProvider = ({ children }) => {
     return cartList.reduce((acc, item) => acc + item.quantity, 0);
   }, [cartList]);
 
+  const getTotalPrice = useCallback(
+    () => cartList.reduce((acc, item) => acc + item.price * item.quantity, 0),
+    [cartList]
+  );
+
+  const getFormattedTotalPrice = useCallback(
+    () => formatPrice(getTotalPrice()),
+    [getTotalPrice]
+  );
+
   const value = useMemo(
     () => ({
       cartList,
@@ -81,6 +92,8 @@ export const CartContextProvider = ({ children }) => {
       removeList,
       deleteItem,
       getTotalItems,
+      getTotalPrice,
+      getFormattedTotalPrice,
     }),
     [
       cartList,
@@ -91,6 +104,8 @@ export const CartContextProvider = ({ children }) => {
       removeList,
       deleteItem,
       getTotalItems,
+      getTotalPrice,
+      getFormattedTotalPrice,
     ]
   );
 
