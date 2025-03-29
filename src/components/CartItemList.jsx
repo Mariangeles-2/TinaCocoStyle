@@ -1,5 +1,5 @@
 //Importa utilidades
-import { obtenerURLImagen } from "../utils/obtenerURLImagen";
+import { getImageURL } from "../utils/getImageURL";
 import { formatPrice } from "../utils/formatPrice";
 //Importa contexto
 import { CartContext } from "../contexts/CartContext";
@@ -21,7 +21,7 @@ export const CartItemList = () => {
         >
           <img
             className="tcs-img-item mr-3"
-            src={obtenerURLImagen(item.image)}
+            src={getImageURL(item.image)}
             alt={item.name}
           />
           <div className="w-75">

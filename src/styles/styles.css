@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.tcs-logo-con-nombre-footer{
+.tcs-logo-with-name-footer{
     width: 150px;
     height: 80px;
 }
@@ -26,7 +26,7 @@ p{
 
 /* Error 404 */
 
-.tcs-error404-titulo{
+.tcs-error404-title{
     margin-top: 2rem;
     margin-bottom: 0%;
     color: #4f4233;
@@ -44,29 +44,29 @@ p{
 }
 
 /* Detalle del articulo */
-.tcs-nombre-articulo{
+.tcs-article-name{
     font-size: 1.8rem;
     color: #4f4233;
 }
-.tcs-detalle-articulo{
+.tcs-product-details{
 font-size: 1.2rem;
 }
-.tcs-precio{
+.tcs-price{
     font-size: 1.5rem;
     color: #4f4233;
 }
-.tcs-promo-cuotas{
+.tcs-quota-promo{
     font-size: 1rem;
     color: #3b6336;
 }
-.tcs-imagen-tarjetas-bancarias{
+.tcs-bank-cards-img{
     width: 7rem;
     height: 1rem;   
 }
 
 /* Carrito */
 
-.tcs-titulo-mi-carrito{
+.tcs-my-car-title{
     font-size: 2rem;
     color: #4f4233;
 }
@@ -77,12 +77,12 @@ font-size: 1.2rem;
     object-fit: cover
 }
 
-.tcs-titulo-resumen{
+.tcs-resum-title{
     font-size: 1.5rem;
     color: #4d4236;
 }
 
-.tcs-titulo-total{
+.tcs-total-title{
     font-size: 1.2rem;
     color: #4d4236;
 }

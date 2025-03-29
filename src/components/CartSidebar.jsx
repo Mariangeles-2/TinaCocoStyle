@@ -9,6 +9,8 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 //Importa componente
 import { CartItemList } from "./CartItemList";
+//Importa formatear precio
+import { formatPrice } from "../utils/formatPrice";
 
 export const CartSidebar = () => {
   const { showCartSidebar, setShowCartSidebar } = useContext(CartContext);
@@ -18,7 +20,7 @@ export const CartSidebar = () => {
   return (
     <Offcanvas show={showCartSidebar} onHide={handleClose} placement="end">
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title className="tcs-titulo-mi-carrito">
+        <Offcanvas.Title className="tcs-my-car-title">
           Mi carrito
         </Offcanvas.Title>
       </Offcanvas.Header>
@@ -28,14 +30,27 @@ export const CartSidebar = () => {
         ) : (
           <CartItemList />
         )}
-        <Button
-          variant="secondary"
-          as={Link}
-          to="/carrito"
-          onClick={handleClose}
-        >
-          Ver mi carrito
-        </Button>
+        <div>
+          <div className="d-flex mt-1 justify-content-between">
+            <h3 className="tcs-total-title m-2">Total</h3>
+            <div className="my-2">
+              {formatPrice(
+                cartList.reduce(
+                  (acc, item) => acc + item.price * item.quantity,
+                  0
+                )
+              )}
+            </div>
+          </div>
+          <Button
+            variant="secondary"
+            as={Link}
+            to="/carrito"
+            onClick={handleClose}
+          >
+            Ver mi carrito
+          </Button>
+        </div>
       </Offcanvas.Body>
     </Offcanvas>
   );

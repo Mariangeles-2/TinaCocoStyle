@@ -1,10 +1,11 @@
-//Importa React
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-//Importa estilos de index.css
+import App from "./App";
+import { uploadJsonToFirebase } from "./utils/uploadJsonToFirebase.js";
 import "./index.css";
-//Importa componente App
-import App from "./App.jsx";
+
+// Llamar a uploadJsonToFirebase fuera del StrictMode
+uploadJsonToFirebase();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

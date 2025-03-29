@@ -8,7 +8,7 @@ export const TcsFooter = () => (
         <img
           src={tcsLogoConNombre}
           alt="TinaCoco Style Logo"
-          className="tcs-logo-con-nombre-footer justify-content-center"
+          className="tcs-logo-with-name-footer justify-content-center"
         />
         <p className="text-center">
           Ofrecemos artículos de bazar de calidad, combinando diseño y

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 //Importa formatPrice
 import { formatPrice } from "../utils/formatPrice";
 //Importa URL para imagenes
-import { obtenerURLImagen } from "../utils/obtenerURLImagen";
+import { getImageURL } from "../utils/getImageURL";
 //Importa contexto de CartContext
 import { CartContext } from "../contexts/CartContext";
 //Importa useContext de react
@@ -32,7 +32,7 @@ export const ItemListContainer = (props) => {
                 <Card.Img
                   variant="top"
                   //Copiado en StackOverflow ya que no me redireccionaba bien la imagen
-                  src={obtenerURLImagen(articulo.image)}
+                  src={getImageURL(articulo.image)}
                 />
                 <Card.Body>
                   <Card.Title>{articulo.name}</Card.Title>
@@ -61,7 +61,7 @@ export const ItemListContainer = (props) => {
 ItemListContainer.propTypes = {
   articulos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,

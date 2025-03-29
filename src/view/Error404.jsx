@@ -10,7 +10,7 @@ export const Error404 = () => {
   return (
     <Container>
       <div>
-        <h1 className="tcs-error404-titulo">Error</h1>
+        <h1 className="tcs-error404-title">Error</h1>
         <div>
           <div className="d-flex justify-content-center align-items-center">
             <p className="tcs-error404">4</p>

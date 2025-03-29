@@ -8,14 +8,14 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 //Importa useContext
 import { useContext } from "react";
 //Importa contexto de CartContext
-import { CartContext } from "../contexts/CartContext";  
+import { CartContext } from "../contexts/CartContext";
 
 export const RemoveButton = ({ itemId }) => {
-    const { deleteItem } = useContext(CartContext);
-    const onRemove = () => {
-      deleteItem(itemId);
-    };
-    
+  const { deleteItem } = useContext(CartContext);
+  const onRemove = () => {
+    deleteItem(itemId);
+  };
+
   return (
     <Button className="btn btn-secondary btn-sm" onClick={onRemove}>
       <FontAwesomeIcon icon={faTrash} />
@@ -24,5 +24,5 @@ export const RemoveButton = ({ itemId }) => {
 };
 
 RemoveButton.propTypes = {
-    itemId: PropTypes.number.isRequired,
+  itemId: PropTypes.string.isRequired,
 };

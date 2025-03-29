@@ -1,9 +1,7 @@
 //Importa componente CartWidget
 import { CartWidget } from "./CartWidget";
 //Importa componentes para Navbar Bootstrap
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -54,18 +52,6 @@ export const NavBar = () => (
               Ayuda
             </Nav.Link>
           </Nav>
-          {/* Agrega formulario de búsqueda */}
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="..."
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="secondary" type="submit">
-              Buscar
-            </Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

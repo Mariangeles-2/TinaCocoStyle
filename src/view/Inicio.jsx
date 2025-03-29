@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 //Importa componentes
 import { ItemListContainer } from "../components/ItemListContainer";
 import { LoadingSpinner } from "../components/LoadingSpinner";
-import { fetchArticulos } from "../utils/cargarArticulos";
+import { fetchArticles } from "../utils/articleUtils";
 
 const categories = {
   dormitorio: "Dormitorio",
@@ -22,7 +22,7 @@ export const Inicio = () => {
     setLoading(true); // Restablece el estado de carga a true cada vez que cambia la categoría
 
     const timer = setTimeout(() => {
-      fetchArticulos(categoriaId)
+      fetchArticles(categoriaId)
         .then((arts) => setArticulos(arts))
         .finally(() => setLoading(false));
     }, 3000);
