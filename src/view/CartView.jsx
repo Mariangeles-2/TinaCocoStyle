@@ -3,21 +3,19 @@ import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
 //Importa componente de react-bootstrap
 import Button from "react-bootstrap/Button";
-//Importa formatear precio
-import { formatPrice } from "../utils/formatPrice";
 //Importa componente
 import { CartItemList } from "../components/CartItemList";
 //Importa Link de react-router-dom
 import { Link } from "react-router-dom";
 //Importa componente
-import { CheckoutForm } from "../components/CheckoutForm";
+import { ShippingDataForm } from "../components/ShippingDataForm";
+import { OrderSummary } from "../components/OrderSummary";
 
 export const CartView = () => {
   const { cartList } = useContext(CartContext);
   return (
     <div className="container mt-4">
       <h1 className="tcs-my-car-title mb-4">Mi carrito</h1>
-
       {cartList.length === 0 ? (
         <p className="text-muted mt-5">No hay articulos en el carrito</p>
       ) : (
@@ -25,36 +23,17 @@ export const CartView = () => {
           <div className="w-75">
             <CartItemList />
           </div>
-          <div className="d-flex flex-column p-2 ms-3 border rounded h-25">
-            <h2 className="tcs-resum-title">Resumen de compra</h2>
-            <div>
-              <CheckoutForm />
-            </div>
-            <div className="d-flex mt-1 justify-content-between">
-              <p>Articulos</p>
-              <div className="mt-2">
-                {cartList.reduce((acc, item) => acc + item.quantity, 0)}{" "}
-              </div>
-            </div>
-            <div className="d-flex mt-1 justify-content-between">
-              <p>Envío</p>
-              <p className="text-success me-0">Gratis</p>
-            </div>
-            <div className="d-flex mt-1 justify-content-between">
-              <h3 className="tcs-total-title m-2">Total</h3>
-              <div className="my-2">
-                {formatPrice(
-                  cartList.reduce(
-                    (acc, item) => acc + item.price * item.quantity,
-                    0
-                  )
-                )}
-              </div>
-            </div>
-            <div className="d-flex mt-3 justify-content-between">
+          <div className="d-flex flex-column w-25">
+            <div className="d-flex flex-column p-2 ms-3 border rounded mb-3">
+              <h2 className="tcs-resum-title">Resumen de compra</h2>
+              <OrderSummary />
               <Button className="btn btn-secondary btn-sm" as={Link} to="/">
                 Seguir comprando
               </Button>
+            </div>
+            <div className="d-flex flex-column p-2 ms-3 border rounded mb-3">
+              <h2 className="tcs-resum-title">Datos de envío</h2>{" "}
+              <ShippingDataForm />
               <Button className="btn btn-secondary ms-2 btn-sm">
                 Finalizar compra
               </Button>

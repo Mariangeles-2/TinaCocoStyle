@@ -4,22 +4,41 @@ import { CartContext } from "../CartContext";
 import { useState, useMemo, useCallback } from "react";
 //Importa PropTypes
 import PropTypes from "prop-types";
+//Importa librería de sweetalert2
+import Swal from "sweetalert2";
 
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const [showCartSidebar, setShowCartSidebar] = useState(false);
 
+  // Función modularizada para validar stock y actualizar el carrito
+  const validateAndUpdateStock = useCallback(
+    (item, newQuantity) => {
+      if (newQuantity <= item.stock) {
+        item.quantity = newQuantity;
+        setCartList([...cartList]);
+      } else {
+        Swal.fire({
+          title: "¡No hay suficiente stock!",
+          icon: "error",
+          showConfirmButton: false,
+          timer: 2500,
+        });
+      }
+    },
+    [cartList]
+  );
+
   const addToCart = useCallback(
     (article, quantity) => {
       if (cartList.some((item) => item.id === article.id)) {
         const item = cartList.find((item) => item.id === article.id);
-        item.quantity += quantity;
-        setCartList([...cartList]);
+        validateAndUpdateStock(item, item.quantity + quantity);
       } else {
         setCartList([...cartList, { ...article, quantity }]);
       }
     },
-    [cartList]
+    [cartList, validateAndUpdateStock]
   );
 
   const removeList = useCallback(() => {
@@ -41,12 +60,11 @@ export const CartContextProvider = ({ children }) => {
           deleteItem(id);
         } else {
           const item = cartList.find((item) => item.id === id);
-          item.quantity = quantity;
-          setCartList([...cartList]);
+          validateAndUpdateStock(item, quantity);
         }
       }
     },
-    [cartList, deleteItem]
+    [cartList, deleteItem, validateAndUpdateStock]
   );
 
   const getTotalItems = useCallback(() => {

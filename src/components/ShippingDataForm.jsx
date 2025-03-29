@@ -3,7 +3,7 @@ import { useState } from "react";
 //Importa librería de react-bootstrap
 import { Form } from "react-bootstrap";
 
-export const CheckoutForm = () => {
+export const ShippingDataForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,44 +18,55 @@ export const CheckoutForm = () => {
 
   return (
     <Form>
-      <Form.Group controlId="formName" className="mb-3">
-        <Form.Label>Nombre</Form.Label>
+      <Form.Group className="mb-3">
         <Form.Control
           type="text"
-          name="name"
+          name="lastname"
+          placeholder="Apellido"
           value={formData.name}
           onChange={handleChange}
           required
         />
       </Form.Group>
 
-      <Form.Group controlId="formEmail" className="mb-3">
-        <Form.Label>Correo Electrónico</Form.Label>
+      <Form.Group className="mb-3">
+        <Form.Control
+          type="text"
+          name="firstname"
+          placeholder="Nombre"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3">
         <Form.Control
           type="email"
           name="email"
+          placeholder="Correo Electrónico"
           value={formData.email}
           onChange={handleChange}
           required
         />
       </Form.Group>
 
-      <Form.Group controlId="formPhone" className="mb-3">
-        <Form.Label>Teléfono</Form.Label>
+      <Form.Group className="mb-3">
         <Form.Control
           type="tel"
           name="phone"
+          placeholder="Teléfono"
           value={formData.phone}
           onChange={handleChange}
           required
         />
       </Form.Group>
 
-      <Form.Group controlId="formAddress" className="mb-3">
-        <Form.Label>Dirección</Form.Label>
+      <Form.Group className="mb-3">
         <Form.Control
           type="text"
           name="address"
+          placeholder="Calle, número, piso, departamento"
           value={formData.address}
           onChange={handleChange}
           required

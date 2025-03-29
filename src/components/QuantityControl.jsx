@@ -16,6 +16,7 @@ export const QuantityControl = ({ item }) => {
     updateQuantity(item.id, item.quantity - 1);
   };
   const onChange = (newQuantity) => {
+    console.log(newQuantity);
     updateQuantity(item.id, newQuantity);
   };
 
@@ -30,6 +31,7 @@ export const QuantityControl = ({ item }) => {
         value={item.quantity}
         onChange={(e) => onChange(Number(e.target.value))}
         min="1"
+        disabled
       />
       <Button className="btn btn-secondary btn-sm m-1" onClick={onIncrease}>
         +
