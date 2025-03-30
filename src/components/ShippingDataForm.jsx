@@ -48,8 +48,7 @@ export const ShippingDataForm = () => {
         title: "Orden creada con éxito",
         text: `Tu número de orden es el: ${docRef.id}`,
         icon: "success",
-        showConfirmButton: false,
-        timer: 2500,
+        confirmButtonColor: "#6c757d",
       }).then(() => {
         removeList();
         navigate("/");
