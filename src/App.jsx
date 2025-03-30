@@ -13,9 +13,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Importa componente Footer
 import { TcsFooter } from "./components/TcsFooter";
 //Importa componentes de las páginas
-import { Inicio } from "./view/Inicio.jsx";
-import { DetalleDeArticulo } from "./view/DetalleDeArticulo.jsx";
-import { Ayuda } from "./view/Ayuda.jsx";
+import { Home } from "./view/Home.jsx";
+import { ArticleDetail } from "./view/ArticleDetail.jsx";
+import { Help } from "./view/Help.jsx";
 import { Error404 } from "./view/Error404.jsx";
 import { CartContextProvider } from "./contexts/providers/CartContextProvider.jsx";
 import { CartView } from "./view/CartView.jsx";
@@ -28,10 +28,10 @@ function App() {
           <NavBar />
           <div className="d-flex flex-column min-vh-100">
             <Routes>
-              <Route path="/" element={<Inicio />} />
-              <Route path="/products/:id" element={<DetalleDeArticulo />} />
-              <Route path="/categorias/:categoriaId" element={<Inicio />} />
-              <Route path="/ayuda" element={<Ayuda />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/products/:id" element={<ArticleDetail />} />
+              <Route path="/categorias/:categoriaId" element={<Home />} />
+              <Route path="/help" element={<Help />} />
               <Route path="/carrito" element={<CartView />} />
               <Route path="*" element={<Error404 />} />
             </Routes>

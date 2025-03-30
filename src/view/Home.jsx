@@ -13,7 +13,7 @@ const categories = {
   "aire-libre": "Aire Libre",
 };
 
-export const Inicio = () => {
+export const Home = () => {
   const [articulos, setArticulos] = useState([]);
   const [loading, setLoading] = useState(true);
   const { categoriaId } = useParams();

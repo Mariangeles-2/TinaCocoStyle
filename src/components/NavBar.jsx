@@ -48,7 +48,7 @@ export const NavBar = () => (
                 Aire Libre
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={NavLink} to="/ayuda" className="nav-title">
+            <Nav.Link as={NavLink} to="/help" className="nav-title">
               Ayuda
             </Nav.Link>
           </Nav>

@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 //Importa componente
 import { ContactForm } from "../components/ContactForm";
 
-export const Ayuda = () => {
+export const Help = () => {
   return (
     <Container className="ontainer-fluid my-5">
       <h2 className="display-6 text-center mb-5">¡Tu opinión nos importa!</h2>

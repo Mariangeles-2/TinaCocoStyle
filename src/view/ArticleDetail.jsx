@@ -14,7 +14,7 @@ import { getImageURL } from "../utils/getImageURL";
 //Importa contexto
 import { CartContext } from "../contexts/CartContext";
 
-export const DetalleDeArticulo = () => {
+export const ArticleDetail = () => {
   const { addToCart } = useContext(CartContext);
   const [articulo, setArticulo] = useState(null);
   const { id } = useParams();
